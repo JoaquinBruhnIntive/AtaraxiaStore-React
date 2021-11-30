@@ -1,0 +1,35 @@
+@import url(../globalStyles.css);
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: var(--grey);
+}
+
+/*LOGO*/
+
+.logo{
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--black);
+}
+
+.logo > h2 {
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight:bold
+}
+
+/*NAVEGACION*/
+
+.navigation > a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight:500;
+}
