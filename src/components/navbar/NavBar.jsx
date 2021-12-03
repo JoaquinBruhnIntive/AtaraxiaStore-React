@@ -1,4 +1,4 @@
-
+import CartWidget from "./cartWidget/cartWidget";
 import "./NavBar.css"
 
 function NavBar (){
@@ -11,6 +11,7 @@ function NavBar (){
                 <a href="https://www.youtube.com/">sets</a>
                 <a href="https://www.youtube.com/">sale</a>
                 <a href="https://www.youtube.com/">shop</a>
+                <CartWidget />
             </div>
         </nav>
     )
