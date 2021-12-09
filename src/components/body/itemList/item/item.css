@@ -1,0 +1,36 @@
+@import url(../../../../globalStyles.css);
+
+.product-item{
+    flex: 0 1 25%;
+    min-width: 18rem;
+    min-height: 16rem;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid var(--black);
+}
+
+.product-details > h5,
+.product-details > div:nth-child(2) {
+    text-align: start;
+}
+
+.product-details > div:nth-child(3) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.product-details > div:nth-child(3) > * {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.active-button {
+    color: rgb(104, 104, 255);
+    border: 4px solid rgb(104, 104, 255);
+}
+
+.unactive-button {
+    color: rgb(136, 136, 136);
+    border: 4px solid rgb(136, 136, 136);;
+}
