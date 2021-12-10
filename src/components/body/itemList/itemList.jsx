@@ -7,7 +7,7 @@ function ItemList ({list}){
 
     return(
         <div className="item-list">
-            {list.map(el=> <Item key={el.productId} product={el} />)}
+            {list.map((el)=> <Item key={el.productId} product={el} />)}
         </div>
     )
 };
