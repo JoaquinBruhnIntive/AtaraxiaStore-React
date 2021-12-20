@@ -19,11 +19,15 @@ function ApiChallenge(){
     },[pokemon])
 
     async function pokeFetch (pokemon){
+        try{
         const call =  await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
         const result = await call.json();
         setPokemonData(result)
+        }catch(error){
+            let err = false
+            return setPokemonData(err) 
+        }
     }
-
     async function formHandler(e){
         e.preventDefault()
 
@@ -37,7 +41,13 @@ function ApiChallenge(){
             <div className="content">
                 <h3>Pokemon display</h3>
                 {
-                    pokemonData===null? <h5>Please wait for the pokemon to load or try selecting another one</h5> : <ItemDetailContainer pokemonData={pokemonData}/>
+                    pokemonData===null? 
+                        <h5>Please wait for the pokemon to load or try selecting another one</h5> 
+                        : 
+                        [pokemonData? 
+                            <ItemDetailContainer pokemonData={pokemonData}/> 
+                            : 
+                            <h5>Escribiste mal el pokemon</h5>]
                 }
                 <form onSubmit={formHandler}>
                     <input type="text" placeholder="Type a pokemon" id="pokemonInput" />
