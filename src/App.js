@@ -1,5 +1,7 @@
 import NavBar from './components/navbar/NavBar';
 import ItemListContainer from './components/body/itemListContainer';
+import ApiChallenge from './components/body/apiChallenge'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -9,7 +11,13 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer greeting={greeting}/>
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<ItemListContainer greeting={greeting}/>}/>
+            <Route exact path="/pokeapi" element={<ApiChallenge/>}/>
+            <Route path="/*" element={<h1>404</h1>}/>
+          </Routes>
+        </BrowserRouter>
     </div>
   );
 }
